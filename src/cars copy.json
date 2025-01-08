@@ -1,0 +1,89 @@
+{
+    "cars": [
+      {
+        "title": "Tesla Model S",
+        "type": "Electric",
+        "location": "California, USA",
+        "description": "The Tesla Model S is an all-electric luxury sedan that combines performance, safety, and advanced technology. With a sleek design and impressive range, it's a leader in electric vehicles.",
+        "price": "$80,000 - $100,000",
+        "company": {
+          "name": "Tesla Inc.",
+          "description": "Tesla is a leading electric vehicle and clean energy company known for its innovative approach to electric mobility and sustainable energy solutions.",
+          "contactEmail": "contact@tesla.com",
+          "contactPhone": "1-800-123-4567"
+        },
+        "id": "1"
+      },
+      {
+        "id": "2",
+        "title": "Ford Mustang Mach-E",
+        "type": "Electric",
+        "description": "The Ford Mustang Mach-E is an all-electric SUV with impressive performance and a stylish design. It offers a range of advanced technology features and a thrilling driving experience.",
+        "location": "Detroit, MI",
+        "price": "$42,000 - $60,000",
+        "company": {
+          "name": "Ford Motor Company",
+          "description": "Ford is an iconic American automotive manufacturer known for producing a wide range of cars, trucks, and SUVs. It is committed to delivering quality vehicles to its customers.",
+          "contactEmail": "contact@ford.com",
+          "contactPhone": "1-800-555-5555"
+        }
+      },
+      {
+        "id": "3",
+        "title": "Chevrolet Bolt EV",
+        "type": "Electric",
+        "description": "The Chevrolet Bolt EV is an affordable all-electric vehicle with a range that allows for long drives without range anxiety. It’s designed for both practicality and fun.",
+        "location": "Detroit, MI",
+        "price": "$30,000 - $40,000",
+        "company": {
+          "name": "Chevrolet",
+          "description": "Chevrolet is a division of General Motors, producing vehicles ranging from compact cars to full-size trucks, known for their durability and performance.",
+          "contactEmail": "contact@chevrolet.com",
+          "contactPhone": "1-800-555-5555"
+        }
+      },
+      {
+        "id": "4",
+        "title": "BMW i4",
+        "type": "Electric",
+        "description": "The BMW i4 is a sleek, high-performance electric sedan designed for both comfort and dynamic driving. It combines advanced technology with a luxurious design.",
+        "location": "Munich, Germany",
+        "price": "$55,000 - $70,000",
+        "company": {
+          "name": "BMW",
+          "description": "BMW is a world-renowned German automobile manufacturer specializing in luxury vehicles. It is known for producing high-performance cars with cutting-edge technology.",
+          "contactEmail": "contact@bmw.com",
+          "contactPhone": "+49 89 382 0"
+        }
+      },
+      {
+        "id": "5",
+        "title": "Audi e-Tron",
+        "type": "Electric",
+        "description": "The Audi e-Tron is a fully electric luxury SUV that offers a combination of advanced technology, luxury, and powerful performance, making it ideal for long journeys and city driving alike.",
+        "location": "Ingolstadt, Germany",
+        "price": "$70,000 - $85,000",
+        "company": {
+          "name": "Audi",
+          "description": "Audi is a premium automobile manufacturer known for producing luxury vehicles that combine performance, innovation, and sustainability.",
+          "contactEmail": "contact@audi.com",
+          "contactPhone": "+49 800 283 482"
+        }
+      },
+      {
+        "id": "6",
+        "title": "Nissan Leaf",
+        "type": "Electric",
+        "description": "The Nissan Leaf is one of the most affordable all-electric vehicles available today. It offers a comfortable ride, impressive range, and a variety of tech features at an attractive price point.",
+        "location": "Yokohama, Japan",
+        "price": "$30,000 - $40,000",
+        "company": {
+          "name": "Nissan",
+          "description": "Nissan is a Japanese multinational automobile manufacturer known for its wide range of vehicles, from compact cars to electric vehicles.",
+          "contactEmail": "contact@nissan.com",
+          "contactPhone": "+81 45 500 5100"
+        }
+      }
+    ]
+  }
+  

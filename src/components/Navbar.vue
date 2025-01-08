@@ -9,7 +9,7 @@ const isActiveLink = (routePath) => {
 </script>
 
 <template>
-  <nav class="bg-green-700 border-b border-green-500">
+  <nav class="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 border-b border-purple-700">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
         <div
@@ -17,19 +17,19 @@ const isActiveLink = (routePath) => {
         >
           <!-- Logo -->
           <RouterLink class="flex flex-shrink-0 items-center mr-4" to="/">
-            <img class="h-10 w-auto" :src="logo" alt="Vue Jobs" />
+              <img class="h-16 w-auto" :src="logo" alt="Car Sale" />
             <span class="hidden md:block text-white text-2xl font-bold ml-2"
-              >Vue Jobs</span
+              >Cars Hub</span
             >
           </RouterLink>
-          <div class="md:ml-auto">
+          <div class="md:ml-auto mt-3">
             <div class="flex space-x-2">
               <RouterLink
                 to="/"
-                :class="[
-                  isActiveLink('/')
-                    ? 'bg-green-900'
-                    : 'hover:bg-gray-900 hover:text-white',
+                :class="[ 
+                  isActiveLink('/') 
+                    ? 'bg-purple-800'
+                    : 'hover:bg-purple-700 hover:text-white',
                   'text-white',
                   'px-3',
                   'py-2',
@@ -38,30 +38,43 @@ const isActiveLink = (routePath) => {
                 >Home</RouterLink
               >
               <RouterLink
-                to="/jobs"
-                :class="[
-                  isActiveLink('/jobs')
-                    ? 'bg-green-900'
-                    : 'hover:bg-gray-900 hover:text-white',
+                to="/cars"
+                :class="[ 
+                  isActiveLink('/cars') 
+                    ? 'bg-purple-800'
+                    : 'hover:bg-purple-700 hover:text-white',
                   'text-white',
                   'px-3',
                   'py-2',
                   'rounded-md',
                 ]"
-                >Jobs</RouterLink
+                >Browse Cars</RouterLink
               >
               <RouterLink
-                to="/jobs/add"
-                :class="[
-                  isActiveLink('/jobs/add')
-                    ? 'bg-green-900'
-                    : 'hover:bg-gray-900 hover:text-white',
+                to="/cars/add"
+                :class="[ 
+                  isActiveLink('/cars/add') 
+                    ? 'bg-purple-800'
+                    : 'hover:bg-purple-700 hover:text-white',
                   'text-white',
                   'px-3',
                   'py-2',
                   'rounded-md',
                 ]"
-                >Add Job</RouterLink
+                >Add Car</RouterLink
+              >
+              <RouterLink
+                to="/contact"
+                :class="[ 
+                  isActiveLink('/contact') 
+                    ? 'bg-purple-800'
+                    : 'hover:bg-purple-700 hover:text-white',
+                  'text-white',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                ]"
+                >Contact Us</RouterLink
               >
             </div>
           </div>

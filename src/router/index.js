@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
-import JobsView from '@/views/JobsView.vue';
+import CarsView from '@/views/CarsView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
-import JobView from '@/views/JobView.vue';
-import AddJobView from '@/views/AddJobView.vue';
-import EditJobView from '@/views/EditJobView.vue';
+import CarView from '@/views/CarView.vue';
+import AddCarView from '@/views/AddCarView.vue';
+import EditCarView from '@/views/EditCarView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,24 +15,24 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/jobs',
-      name: 'jobs',
-      component: JobsView,
+      path: '/cars',
+      name: 'cars',
+      component: CarsView,
     },
     {
-      path: '/jobs/:id',
-      name: 'job',
-      component: JobView,
+      path: '/cars/:id',
+      name: 'car',
+      component: CarView,
     },
     {
-      path: '/jobs/add',
-      name: 'add-job',
-      component: AddJobView,
+      path: '/cars/add',
+      name: 'add-car',
+      component: AddCarView,
     },
     {
-      path: '/jobs/edit/:id',
-      name: 'edit-job',
-      component: EditJobView,
+      path: '/cars/edit/:id',
+      name: 'edit-car',
+      component: EditCarView,
     },
     {
       path: '/:catchAll(.*)',

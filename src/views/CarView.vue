@@ -1,10 +1,10 @@
 <script setup>
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-import BackButton from '@/components/BackButton.vue';
-import { reactive, onMounted } from 'vue';
-import { useRoute, RouterLink, useRouter } from 'vue-router';
-import { useToast } from 'vue-toastification';
-import axios from 'axios';
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
+import BackButton from "@/components/BackButton.vue";
+import { reactive, onMounted } from "vue";
+import { useRoute, RouterLink, useRouter } from "vue-router";
+import { useToast } from "vue-toastification";
+import axios from "axios";
 
 const route = useRoute();
 const router = useRouter();
@@ -19,15 +19,17 @@ const state = reactive({
 
 const deleteCar = async () => {
   try {
-    const confirm = window.confirm('Are you sure you want to delete this car listing?');
+    const confirm = window.confirm(
+      "Are you sure you want to delete this car listing?"
+    );
     if (confirm) {
       await axios.delete(`/api/cars/${carId}`);
-      toast.success('Car Listing Deleted Successfully');
-      router.push('/cars');
+      toast.success("Car Listing Deleted Successfully");
+      router.push("/cars");
     }
   } catch (error) {
-    console.error('Error deleting car listing', error);
-    toast.error('Car Listing Not Deleted');
+    console.error("Error deleting car listing", error);
+    toast.error("Car Listing Not Deleted");
   }
 };
 
@@ -36,7 +38,7 @@ onMounted(async () => {
     const response = await axios.get(`/api/cars/${carId}`);
     state.car = response.data;
   } catch (error) {
-    console.error('Error fetching car listing', error);
+    console.error("Error fetching car listing", error);
   } finally {
     state.isLoading = false;
   }
@@ -45,7 +47,10 @@ onMounted(async () => {
 
 <template>
   <BackButton />
-  <section v-if="!state.isLoading" class="bg-green-50 bg-gradient-to-br from-purple-600 via-pink-500 to-red-900 min-h-screen ">
+  <section
+    v-if="!state.isLoading"
+    class="bg-green-50 bg-gradient-to-br from-purple-600 via-pink-500 to-red-900 min-h-screen"
+  >
     >
     <div class="container m-auto py-10 px-6">
       <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
@@ -63,10 +68,10 @@ onMounted(async () => {
             </div>
           </div>
 
-          <div class="bg-gradient-to-r from-purple-200 via-pink-300 to-red-300 border-b border-purple-700 p-6 rounded-lg shadow-md mt-6">
-            <h3 class="text-red-900 text-lg font-bold mb-6">
-              Car Description
-            </h3>
+          <div
+            class="bg-gradient-to-r from-purple-200 via-pink-300 to-red-300 border-b border-purple-700 p-6 rounded-lg shadow-md mt-6"
+          >
+            <h3 class="text-red-900 text-lg font-bold mb-6">Car Description</h3>
 
             <p class="mb-4">
               {{ state.car.description }}
@@ -81,7 +86,9 @@ onMounted(async () => {
         <!-- Sidebar -->
         <aside>
           <!-- Company Info -->
-          <div class="bg-gradient-to-r from-purple-200 via-pink-300 to-red-300 border-b border-purple-700 p-6 rounded-lg shadow-md">
+          <div
+            class="bg-gradient-to-r from-purple-200 via-pink-300 to-red-300 border-b border-purple-700 p-6 rounded-lg shadow-md"
+          >
             <h3 class="text-xl font-bold mb-6">Seller Info</h3>
 
             <h2 class="text-2xl">{{ state.car.seller.name }}</h2>
@@ -106,11 +113,13 @@ onMounted(async () => {
           </div>
 
           <!-- Manage -->
-          <div class="bg-gradient-to-r from-purple-200 via-pink-300 to-red-300 border-b border-purple-700  p-6 rounded-lg shadow-md mt-6">
+          <div
+            class="bg-gradient-to-r from-purple-200 via-pink-300 to-red-300 border-b border-purple-700 p-6 rounded-lg shadow-md mt-6"
+          >
             <h3 class="text-xl font-bold mb-6">Manage Car Listing</h3>
             <RouterLink
               :to="`/cars/edit/${state.car.id}`"
-              class="bg-gradient-to-r from-purple-500 via-pink-300 to-purple-500 hover:from-purple-500 hover:to-pink-500  text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+              class="bg-gradient-to-r from-purple-500 via-pink-300 to-purple-500 hover:from-purple-500 hover:to-pink-500 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >Edit Car Listing</RouterLink
             >
             <button

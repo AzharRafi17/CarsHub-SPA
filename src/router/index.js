@@ -5,6 +5,8 @@ import NotFoundView from '@/views/NotFoundView.vue';
 import CarView from '@/views/CarView.vue';
 import AddCarView from '@/views/AddCarView.vue';
 import EditCarView from '@/views/EditCarView.vue';
+import CarPaymentView from '@/views/CarPaymentView.vue';
+import ContactUsView from '@/views/ContactUsView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,9 +37,19 @@ const router = createRouter({
       component: EditCarView,
     },
     {
+      path: '/cars/payment/:id',
+      name: 'payment-car',
+      component: CarPaymentView,
+    },
+    {
       path: '/:catchAll(.*)',
       name: 'not-found',
       component: NotFoundView,
+    },
+    {
+      path: '/contact',
+      name: 'contact-us',
+      component: ContactUsView,
     },
   ],
 });

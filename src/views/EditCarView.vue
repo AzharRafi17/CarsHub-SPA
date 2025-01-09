@@ -1,25 +1,25 @@
 <script setup>
-import router from '@/router';
-import BackButton from '@/components/BackButton.vue';
-import { reactive, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
-import { useToast } from 'vue-toastification';
-import axios from 'axios';
+import router from "@/router";
+import BackButton from "@/components/BackButton.vue";
+import { reactive, onMounted } from "vue";
+import { useRoute } from "vue-router";
+import { useToast } from "vue-toastification";
+import axios from "axios";
 
 const route = useRoute();
 const carId = route.params.id;
 
 const form = reactive({
-  make: '',
-  model: '',
-  year: '',
-  price: '',
-  location: '',
-  description: '',
+  make: "",
+  model: "",
+  year: "",
+  price: "",
+  location: "",
+  description: "",
   contact: {
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
   },
 });
 
@@ -47,11 +47,11 @@ const handleSubmit = async () => {
 
   try {
     const response = await axios.put(`/api/cars/${carId}`, updatedCar);
-    toast.success('Car Updated Successfully');
+    toast.success("Car Updated Successfully");
     router.push(`/cars/${response.data.id}`);
   } catch (error) {
-    console.error('Error updating car', error);
-    toast.error('Car Was Not Updated');
+    console.error("Error updating car", error);
+    toast.error("Car Was Not Updated");
   }
 };
 
@@ -60,18 +60,18 @@ onMounted(async () => {
     const response = await axios.get(`/api/cars/${carId}`);
     state.car = response.data;
 
-    form.make = state.car.make || '';
-    form.model = state.car.model || '';
-    form.year = state.car.year || '';
-    form.price = state.car.price || '';
-    form.location = state.car.location || '';
-    form.description = state.car.description || '';
-    form.contact.name = state.car.contact?.name || '';
-    form.contact.email = state.car.contact?.email || '';
-    form.contact.phone = state.car.contact?.phone || '';
+    form.make = state.car.make || "";
+    form.model = state.car.model || "";
+    form.year = state.car.year || "";
+    form.price = state.car.price || "";
+    form.location = state.car.location || "";
+    form.description = state.car.description || "";
+    form.contact.name = state.car.contact?.name || "";
+    form.contact.email = state.car.contact?.email || "";
+    form.contact.phone = state.car.contact?.phone || "";
   } catch (error) {
-    console.error('Error fetching car details', error);
-    toast.error('Error fetching car details');
+    console.error("Error fetching car details", error);
+    toast.error("Error fetching car details");
   } finally {
     state.isLoading = false;
   }
@@ -80,7 +80,9 @@ onMounted(async () => {
 
 <template>
   <BackButton />
-  <section class="bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 min-h-screen py-12">
+  <section
+    class="bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 min-h-screen py-12"
+  >
     <div class="container mx-auto max-w-2xl">
       <div class="bg-white shadow-lg rounded-lg px-8 py-10">
         <form @submit.prevent="handleSubmit">
@@ -89,7 +91,9 @@ onMounted(async () => {
           </h2>
 
           <div class="mb-4">
-            <label for="make" class="block text-gray-700 font-semibold mb-1">Car Make</label>
+            <label for="make" class="block text-gray-700 font-semibold mb-1"
+              >Car Make</label
+            >
             <input
               type="text"
               v-model="form.make"
@@ -101,7 +105,9 @@ onMounted(async () => {
           </div>
 
           <div class="mb-4">
-            <label for="model" class="block text-gray-700 font-semibold mb-1">Car Model</label>
+            <label for="model" class="block text-gray-700 font-semibold mb-1"
+              >Car Model</label
+            >
             <input
               type="text"
               v-model="form.model"
@@ -113,7 +119,9 @@ onMounted(async () => {
           </div>
 
           <div class="mb-4">
-            <label for="year" class="block text-gray-700 font-semibold mb-1">Year</label>
+            <label for="year" class="block text-gray-700 font-semibold mb-1"
+              >Year</label
+            >
             <input
               type="number"
               v-model="form.year"
@@ -125,8 +133,10 @@ onMounted(async () => {
           </div>
 
           <div class="mb-4">
-            <label for="price" class="block text-gray-700 font-semibold mb-1">Price</label>
-            
+            <label for="price" class="block text-gray-700 font-semibold mb-1"
+              >Price</label
+            >
+
             <input
               type="text"
               v-model="form.price"
@@ -135,11 +145,12 @@ onMounted(async () => {
               placeholder="Price of the Car"
               required
             />
-            
           </div>
 
           <div class="mb-4">
-            <label for="location" class="block text-gray-700 font-semibold mb-1">Location</label>
+            <label for="location" class="block text-gray-700 font-semibold mb-1"
+              >Location</label
+            >
             <input
               type="text"
               v-model="form.location"
@@ -151,7 +162,11 @@ onMounted(async () => {
           </div>
 
           <div class="mb-4">
-            <label for="description" class="block text-gray-700 font-semibold mb-1">Description</label>
+            <label
+              for="description"
+              class="block text-gray-700 font-semibold mb-1"
+              >Description</label
+            >
             <textarea
               v-model="form.description"
               id="description"
@@ -162,10 +177,16 @@ onMounted(async () => {
             ></textarea>
           </div>
 
-          <h3 class="text-2xl font-semibold text-pink-600 mb-4">Contact Information</h3>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-4">
+            Contact Information
+          </h3>
 
           <div class="mb-4">
-            <label for="contact_name" class="block text-gray-700 font-semibold mb-1">Your Name</label>
+            <label
+              for="contact_name"
+              class="block text-gray-700 font-semibold mb-1"
+              >Your Name</label
+            >
             <input
               type="text"
               v-model="form.contact.name"
@@ -177,7 +198,11 @@ onMounted(async () => {
           </div>
 
           <div class="mb-4">
-            <label for="contact_email" class="block text-gray-700 font-semibold mb-1">Email</label>
+            <label
+              for="contact_email"
+              class="block text-gray-700 font-semibold mb-1"
+              >Email</label
+            >
             <input
               type="email"
               v-model="form.contact.email"
@@ -189,7 +214,11 @@ onMounted(async () => {
           </div>
 
           <div class="mb-4">
-            <label for="contact_phone" class="block text-gray-700 font-semibold mb-1">Phone (Optional)</label>
+            <label
+              for="contact_phone"
+              class="block text-gray-700 font-semibold mb-1"
+              >Phone (Optional)</label
+            >
             <input
               type="tel"
               v-model="form.contact.phone"

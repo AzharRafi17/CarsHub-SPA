@@ -1,21 +1,21 @@
 <script setup>
-import router from '@/router';
-import BackButton from '@/components/BackButton.vue';
-import { reactive } from 'vue';
-import { useToast } from 'vue-toastification';
-import axios from 'axios';
+import router from "@/router";
+import BackButton from "@/components/BackButton.vue";
+import { reactive } from "vue";
+import { useToast } from "vue-toastification";
+import axios from "axios";
 
 const form = reactive({
-  type: 'Sedan',
-  title: '',
-  description: '',
-  price: '',
-  location: '',
+  type: "Sedan",
+  title: "",
+  description: "",
+  price: "",
+  location: "",
   company: {
-    name: '',
-    description: '',
-    contactEmail: '',
-    contactPhone: '',
+    name: "",
+    description: "",
+    contactEmail: "",
+    contactPhone: "",
   },
 });
 
@@ -37,30 +37,32 @@ const handleSubmit = async () => {
   };
 
   try {
-    const response = await axios.post('/api/cars', newCar);
-    toast.success('Car Added Successfully');
+    const response = await axios.post("/api/cars", newCar);
+    toast.success("Car Added Successfully");
     router.push(`/cars/${response.data.id}`);
   } catch (error) {
-    console.error('Error fetching car', error);
-    toast.error('Car Was Not Added');
+    console.error("Error fetching car", error);
+    toast.error("Car Was Not Added");
   }
 };
 </script>
 
 <template>
   <BackButton />
-  <section class="bg-gradient-to-br from-pink-500 via-purple-500 to-red-500 min-h-screen py-12">
+  <section
+    class="bg-gradient-to-br from-pink-500 via-purple-500 to-red-500 min-h-screen py-12"
+  >
     <div class="container m-auto max-w-2xl py-24">
-      <div
-        class="bg-white shadow-lg rounded-lg px-8 py-10"
-      >
+      <div class="bg-white shadow-lg rounded-lg px-8 py-10">
         <form @submit.prevent="handleSubmit">
           <h2 class="text-4xl font-bold text-center text-gradient mb-8">
             Add Car
           </h2>
 
           <div class="mb-4">
-            <label for="type" class="block text-gray-700 font-semibold mb-1">Car Type</label>
+            <label for="type" class="block text-gray-700 font-semibold mb-1"
+              >Car Type</label
+            >
             <select
               v-model="form.type"
               id="type"
@@ -77,7 +79,9 @@ const handleSubmit = async () => {
           </div>
 
           <div class="mb-4">
-            <label for="title" class="block text-gray-700 font-semibold mb-1">Car Model Name</label>
+            <label for="title" class="block text-gray-700 font-semibold mb-1"
+              >Car Model Name</label
+            >
             <input
               type="text"
               v-model="form.title"
@@ -89,7 +93,11 @@ const handleSubmit = async () => {
           </div>
 
           <div class="mb-4">
-            <label for="description" class="block text-gray-700 font-semibold mb-1">Description</label>
+            <label
+              for="description"
+              class="block text-gray-700 font-semibold mb-1"
+              >Description</label
+            >
             <textarea
               id="description"
               v-model="form.description"
@@ -126,7 +134,9 @@ const handleSubmit = async () => {
           </div>
 
           <div class="mb-4">
-            <label for="location" class="block text-gray-700 font-semibold mb-1">Location</label>
+            <label for="location" class="block text-gray-700 font-semibold mb-1"
+              >Location</label
+            >
             <input
               type="text"
               v-model="form.location"
@@ -137,10 +147,16 @@ const handleSubmit = async () => {
             />
           </div>
 
-          <h3 class="text-2xl font-semibold text-pink-600 mb-4">Company Info</h3>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-4">
+            Company Info
+          </h3>
 
           <div class="mb-4">
-            <label for="company_name" class="block text-gray-700 font-semibold mb-1">Company Name</label>
+            <label
+              for="company_name"
+              class="block text-gray-700 font-semibold mb-1"
+              >Company Name</label
+            >
             <input
               type="text"
               v-model="form.company.name"
@@ -151,7 +167,11 @@ const handleSubmit = async () => {
           </div>
 
           <div class="mb-4">
-            <label for="company_description" class="block text-gray-700 font-semibold mb-1">Company Description</label>
+            <label
+              for="company_description"
+              class="block text-gray-700 font-semibold mb-1"
+              >Company Description</label
+            >
             <textarea
               id="company_description"
               v-model="form.company.description"
@@ -163,7 +183,11 @@ const handleSubmit = async () => {
           </div>
 
           <div class="mb-4">
-            <label for="contact_email" class="block text-gray-700 font-semibold mb-1">Contact Email</label>
+            <label
+              for="contact_email"
+              class="block text-gray-700 font-semibold mb-1"
+              >Contact Email</label
+            >
             <input
               type="email"
               v-model="form.company.contactEmail"
@@ -176,7 +200,11 @@ const handleSubmit = async () => {
           </div>
 
           <div class="mb-4">
-            <label for="contact_phone" class="block text-gray-700 font-semibold mb-1">Contact Phone</label>
+            <label
+              for="contact_phone"
+              class="block text-gray-700 font-semibold mb-1"
+              >Contact Phone</label
+            >
             <input
               type="tel"
               v-model="form.company.contactPhone"

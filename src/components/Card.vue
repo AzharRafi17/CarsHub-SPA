@@ -1,10 +1,10 @@
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps } from "vue";
 
 defineProps({
   bg: {
     type: String,
-    default: 'bg-purple-400',
+    default: "bg-purple-400",
   },
 });
 </script>

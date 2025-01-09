@@ -1,9 +1,9 @@
 <script setup>
-import { RouterLink } from 'vue-router';
-import CarListing from './CarListing.vue';
-import { reactive, defineProps, onMounted } from 'vue';
-import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-import axios from 'axios';
+import { RouterLink } from "vue-router";
+import CarListing from "./CarListing.vue";
+import { reactive, defineProps, onMounted } from "vue";
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
+import axios from "axios";
 
 defineProps({
   limit: Number,
@@ -20,10 +20,10 @@ const state = reactive({
 
 onMounted(async () => {
   try {
-    const response = await axios.get('/api/cars');
+    const response = await axios.get("/api/cars");
     state.cars = response.data;
   } catch (error) {
-    console.error('Error fetching cars', error);
+    console.error("Error fetching cars", error);
   } finally {
     state.isLoading = false;
   }
@@ -33,7 +33,9 @@ onMounted(async () => {
 <template>
   <section class="bg-purple-500 px-4 py-10">
     <div class="container-xl lg:container m-auto">
-      <h2 class="text-4xl font-bold text-white mb-6 text-center">
+      <h2
+        class="text-4xl font-bold text-white mb-6 text-center font-[auto-wide]"
+      >
         Browse Cars for Sale
       </h2>
       <!-- Show loading spinner while loading is true -->
@@ -52,12 +54,10 @@ onMounted(async () => {
     </div>
   </section>
   <section v-if="showButton" class="w-full my-4">
-  <RouterLink
-    to="/cars"
-    class="block w-full bg-gradient-to-r from-purple-500 via-red-500 to-purple-500 hover:from-pink-500 hover:to-purple-400 text-white text-center py-4 px-6  hover:bg-red-600"
-    >View All Cars</RouterLink
-  >
-</section>
-
-
+    <RouterLink
+      to="/cars"
+      class="block w-full bg-gradient-to-r from-purple-500 via-red-500 to-purple-500 hover:from-pink-500 hover:to-purple-400 text-white text-center py-4 px-6 text-2xl hover:bg-red-600 font-[auto-wide]"
+      >View All Cars</RouterLink
+    >
+  </section>
 </template>

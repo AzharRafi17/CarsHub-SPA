@@ -1,6 +1,6 @@
 <script setup>
-import { RouterLink, useRoute } from 'vue-router';
-import logo from '@/assets/img/logo.png';
+import { RouterLink, useRoute } from "vue-router";
+import logo from "@/assets/img/logo.png";
 
 const isActiveLink = (routePath) => {
   const route = useRoute();
@@ -9,7 +9,9 @@ const isActiveLink = (routePath) => {
 </script>
 
 <template>
-  <nav class="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 border-b border-purple-700">
+  <nav
+    class="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 border-b border-purple-700"
+  >
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
         <div
@@ -17,8 +19,9 @@ const isActiveLink = (routePath) => {
         >
           <!-- Logo -->
           <RouterLink class="flex flex-shrink-0 items-center mr-4" to="/">
-              <img class="h-16 w-auto" :src="logo" alt="Car Sale" />
-            <span class="hidden md:block text-white text-2xl font-bold ml-2"
+            <img class="h-16 w-auto" :src="logo" alt="Car Sale" />
+            <span
+              class="hidden md:block text-white text-2xl font-bold ml-2 font-[Audiowide]"
               >Cars Hub</span
             >
           </RouterLink>
@@ -26,8 +29,8 @@ const isActiveLink = (routePath) => {
             <div class="flex space-x-2">
               <RouterLink
                 to="/"
-                :class="[ 
-                  isActiveLink('/') 
+                :class="[
+                  isActiveLink('/')
                     ? 'bg-purple-800'
                     : 'hover:bg-purple-700 hover:text-white',
                   'text-white',
@@ -39,8 +42,8 @@ const isActiveLink = (routePath) => {
               >
               <RouterLink
                 to="/cars"
-                :class="[ 
-                  isActiveLink('/cars') 
+                :class="[
+                  isActiveLink('/cars')
                     ? 'bg-purple-800'
                     : 'hover:bg-purple-700 hover:text-white',
                   'text-white',
@@ -52,8 +55,8 @@ const isActiveLink = (routePath) => {
               >
               <RouterLink
                 to="/cars/add"
-                :class="[ 
-                  isActiveLink('/cars/add') 
+                :class="[
+                  isActiveLink('/cars/add')
                     ? 'bg-purple-800'
                     : 'hover:bg-purple-700 hover:text-white',
                   'text-white',
@@ -65,8 +68,8 @@ const isActiveLink = (routePath) => {
               >
               <RouterLink
                 to="/contact"
-                :class="[ 
-                  isActiveLink('/contact') 
+                :class="[
+                  isActiveLink('/contact')
                     ? 'bg-purple-800'
                     : 'hover:bg-purple-700 hover:text-white',
                   'text-white',
